@@ -1,23 +1,65 @@
-<span class="doctype"><!DOCTYPE html></span><<span class="start-tag">html</span>><<span class="start-tag">head</span>><<span class="start-tag">style</span>> img, object{max-height:50%;max-width:50%;}
-        p {color:black; text-align:center;}
-</<span class="end-tag">style</span>><<span class="start-tag">title</span>> GPS Location </<span class="end-tag">title</span>><<span class="start-tag">meta</span><span class="attribute-name">name</span>="" <span class="attribute-name">content</span>=""><<span class="start-tag">meta</span><span class="attribute-name">name</span>="" <span class="attribute-name">content</span>=""><<span class="start-tag">link</span><span class="attribute-name">rel</span>="" <span class="attribute-name">href</span>="[[view-source:https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css|https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css]]"/><<span class="start-tag">script</span><span class="attribute-name">src</span>="[[view-source:https://code.jquery.com/jquery-1.9.1.min.js|https://code.jquery.com/jquery-1.9.1.min.js]]"></<span class="end-tag">script</span>><<span class="start-tag">script</span><span class="attribute-name">src</span>="[[view-source:https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js|https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js]]"></<span class="end-tag">script</span>></<span class="end-tag">head</span>><<span class="start-tag">body</span>><<span class="start-tag">div</span><span class="attribute-name">data-role</span>="" <span class="attribute-name">id</span>="" <span class="attribute-name">data-theme</span>=""><<span class="start-tag">div</span><span class="attribute-name">data-role</span>="" <span class="attribute-name">data-theme</span>=""><<span class="start-tag">h1</span><span class="attribute-name">style</span>=""><<span class="start-tag">Strong</span>>Are you lost?</<span class="end-tag">strong</span>></<span class="end-tag">h1</span>></<span class="end-tag">div</span>><span class="comment"><!-- /header --></span><<span class="start-tag">div</span><span class="attribute-name">data-role</span>=""><<span class="start-tag">p</span>> I can help! </<span class="end-tag">p</span>><<span class="start-tag">p</span><span class="attribute-name">id</span>="">Click the button to get your position.</<span class="end-tag">p</span>><<span class="start-tag">p</span>><<span class="start-tag">button</span><span class="attribute-name">onclick</span>="">Show my location</<span class="end-tag">button</span>></<span class="end-tag">p</span>><<span class="start-tag">div</span><span class="attribute-name">id</span>=""></<span class="end-tag">div</span>><<span class="start-tag">script</span>>                        function geoFindMe() {
-                            var output = document.getElementById("out");
-                        if (!navigator.geolocation){
-                            output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-                            return;
-                        }
-                        function success(position) {
-                            var latitude  = position.coords.latitude;
-                            var longitude = position.coords.longitude;
-                            output.innerHTML = '<p>Latitude is ' + latitude + 'Â° <br>Longitude is ' + longitude + 'Â°</p>';
+<!DOCTYPE html>
+<html>
+<head>
+<title>GPS Location</title>
+        <style>
+        img, object {
+                max-height: 50%;
+                max-width: 50%;
+        }
+        p {
+              color: black;
+              text-align: center;
+          }
+        </style>
+        <meta name="" content="">
+        <meta name="" content="">
+        link rel href=""
+        view-source:https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css|https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css
+        <script>
+        src=
+        view-source:https://code.jquery.com/jquery-1.9.1.min.js|https://code.jquery.com/jquery-1.9.1.min.js
+        </script>
+<<span class="start-tag">script</span><span class="attribute-name">src</span>="[[view-source:https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js|https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js]]"></<span class="end-tag">script</span>></<span class="end-tag">head</span>>        
+</head>
+<body>
+<<span class="start-tag">body</span>><<span class="start-tag">div</span><span class="attribute-name">data-role</span>="" <span class="attribute-name">id</span>="" <span class="attribute-name">data-theme</span>=""><<span class="start-tag">div</span><span class="attribute-name">data-role</span>="" <span class="attribute-name">data-theme</span>=""><<span class="start-tag">h1</span><span class="attribute-name">style</span>=""><<span class="start-tag">Strong</span>>Are you lost?</<span class="end-tag">strong</span>></<span class="end-tag">h1</span>></<span class="end-tag">div</span>><span class="comment"><!-- /header --></span><<span class="start-tag">div</span><span class="attribute-name">data-role</span>=""><<span class="start-tag">p</span>> I can help! </<span class="end-tag">p</span>><<span class="start-tag">p</span><span class="attribute-name">id</span>="">Click the button to get your position.</<span class="end-tag">p</span>><<span class="start-tag">p</span>>
+
+button onclick>Show my location</button>
+</p>
+<div id=">
+<script>
+function geoFindMe() {
+        var output = document.getElementById("out");
+                if (!navigator.geolocation){
+                        output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+                        return;
+                }
+        
+        function success(position) {
+        var latitude  = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        output.innerHTML = '<p>Latitude is ' + latitude + 'Â° <br>Longitude is ' + longitude + 'Â°</p>';
                             var img = new Image();
-                            img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+                            img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude +                             "&zoom=13&size=300x300&sensor=false";
                             output.appendChild(img);
-                        };
-                        function error() {
-                            output.innerHTML = "Unable to retrieve your location";
-                        };
-                        output.innerHTML = "<p>Locatingâ€¦</p>";
-                        navigator.geolocation.getCurrentPosition(success, error);
-                        }
-</<span class="end-tag">script</span>></<span class="end-tag">div</span>><span class="comment"><!-- /content --></span><<span class="start-tag">div</span><span class="attribute-name">data-role</span>="" <span class="attribute-name">data-position</span>="" <span class="attribute-name">data-theme</span>=""></<span class="end-tag">div</span>><span class="comment"><!-- /footer --></span><span class="error"></</span><span class="end-tag">body</span><span class="error">></span></<span class="end-tag">html</span>>
+        };
+        
+        function error() {
+         output.innerHTML = "Unable to retrieve your location";
+        };
+        
+        output.innerHTML = "<p>Locatingâ€¦</p>";
+        navigator.geolocation.getCurrentPosition(success, error);
+        }
+</script></div><!--/content-->
+<div>
+data-role=""
+data-position=""
+data-theme=""
+</div>
+<!--footer-->
+<span class ="error">
+</body>
+<span class ="error">
+</html>
